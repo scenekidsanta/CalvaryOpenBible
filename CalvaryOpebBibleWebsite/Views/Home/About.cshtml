@@ -9,50 +9,102 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <link href="~/Content/CustomCSS/Navbar.css" rel="stylesheet" type="text/css"/>
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <script>
+        var mn = $(".main-nav");
+        mns = "main-nav-scrolled";
+        hdr = $('header').height();
 
-
-    <script type="text/javascript">
-        var appInsights = window.appInsights || function (config) {
-            function s(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, r = document, f = window, e = "script", o = r.createElement(e), i, u; for (o.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", r.getElementsByTagName(e)[0].parentNode.appendChild(o), t.cookie = r.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) s("track" + i.pop()); return config.disableExceptionTracking || (i = "onerror", s("_" + i), u = f[i], f[i] = function (config, r, f, e, o) { var s = u && u(config, r, f, e, o); return s !== !0 && t["_" + i](config, r, f, e, o), s }), t
-        }({
-            instrumentationKey: "842faeb0-48da-44c6-aaf4-71e0aa7abe6f"
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > hdr) {
+                mn.addClass(mns);
+            } else {
+                mn.removeClass(mns);
+            }
         });
-
-        window.appInsights = appInsights;
-        appInsights.trackPageView();
     </script>
+
+    <!-- 
+        Tutorial used:
+        http://codepen.io/Guilh/pen/JLKbn
+    -->
+
 </head>
 
 <body>
-    <div>
-        <img src="~/img/GrayBar.png" />
-    </div>
-    <div style="background-image =" "">
-        <div class="navbar navbar-inverse">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    </ul>
-                    @Html.Partial("_LoginPartial")
-                </div>
-            </div>
-        </div>
-        <div class="container body-content">
+    <header>
+        <h1>
+            Lorem Ipsum
+        </h1>
+        <p>
+            "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+        </p>
+    </header>
+    <nav class="main-nav">
+        <a href="~/Views/Home/About.cshtml" class="selected">About</a>
+        <a href="~/Views/Home/Contact.cshtml"class="">Contact</a>
+        <a href="~/Views/Home/Index.cshtml">Index</a>
+    </nav>
+            <div class="main">
+                <h2>
+                    Lorem ipsum dolor sit amet
+                </h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mi ligula,
+                     varius ut rhoncus nec, cursus a nisi. Duis a nunc ullamcorper, iaculis 
+                    sapien sit amet, vulputate libero. Proin nisi nibh, commodo in malesuada 
+                    vel, porta in tellus. Donec at arcu feugiat, facilisis lorem non, vehicula 
+                    lectus. Morbi convallis nibh quis sem congue viverra. Sed id cursus diam. 
+                    Nulla in ullamcorper odio. Ut vitae sagittis dolor, ut viverra lectus. Ut 
+                    venenatis quam sit amet ante tincidunt, eget semper magna congue. Donec luctus 
+                    dui eleifend ullamcorper sollicitudin. Sed fringilla lacinia luctus.
 
+                    Etiam consequat tellus eget arcu volutpat pulvinar. Duis venenatis condimentum
+                     mattis. In non maximus quam. Nulla aliquam iaculis tellus in auctor. Nam ac 
+                    nisl ut erat viverra iaculis. Nulla mollis orci nec rhoncus vestibulum. Sed 
+                    quis ullamcorper tortor. Phasellus blandit tincidunt finibus. Nam varius porta 
+                    varius. Curabitur sodales sed neque quis vestibulum. Mauris vulputate lorem 
+                    velit, non luctus nisi tempus sed. Integer laoreet efficitur purus ut bibendum.
+                     Morbi at finibus ante, quis pellentesque diam. Pellentesque tristique nulla
+                     malesuada, iaculis ligula dictum, placerat augue. Nunc luctus convallis arcu, 
+                    volutpat venenatis nisl iaculis in. Curabitur tempor est hendrerit ligula 
+                    hendrerit mollis.
+
+                    In porttitor a dolor quis ultrices. Donec accumsan interdum elit in tincidunt. 
+                    Pellentesque commodo auctor orci eget pretium. Praesent a gravida sapien. Donec
+                     luctus nulla lobortis dui porttitor, a varius mauris volutpat. Suspendisse 
+                    feugiat magna eu libero ultrices, et condimentum orci lacinia. Nullam a arcu 
+                    faucibus, hendrerit sem et, eleifend nisi. Morbi at faucibus nisi. Morbi viverra 
+                    ante id nisl volutpat, nec aliquet dolor mollis. Suspendisse vel purus quis 
+                    tortor ultricies bibendum dignissim sit amet tortor. Mauris sed dolor sed diam 
+                    tempus tincidunt a ut eros. Nulla vel diam mauris. In porta ipsum dolor, vel 
+                    scelerisque velit gravida eu. Vestibulum sed dolor et justo placerat consequat.
+
+                    Donec sollicitudin viverra ex. Phasellus at arcu quam. Ut nec tempus mauris. 
+                    Duis varius, eros nec vulputate elementum, nunc diam placerat augue, ut feugiat 
+                    libero nunc a lacus. Mauris mollis enim libero, id sagittis nisl dignissim eu. 
+                    Duis lobortis tincidunt nulla a sodales. Nam ultrices odio sed lacus auctor, 
+                    at aliquam mi aliquet. Pellentesque molestie pulvinar efficitur. Etiam finibus, 
+                    sapien sit amet eleifend semper, lectus tortor porta nulla, vel tempus tortor 
+                    felis a mi. Cum sociis natoque penatibus et magnis dis parturient montes, 
+                    nascetur ridiculus mus. Etiam a vulputate ipsum. Donec aliquam malesuada libero 
+                    sit amet consectetur.
+
+                    Sed est nisl, ultricies quis commodo a, semper ut nulla. In vitae sem auctor, 
+                    tempor nunc et, euismod massa. Cras cursus diam vel sodales lobortis. Etiam 
+                    tincidunt dolor et enim malesuada, id aliquet diam tempor. Mauris pretium, 
+                    felis in egestas faucibus, felis erat imperdiet ante, nec tempor augue purus 
+                    ut eros. Duis interdum congue tortor. Aenean aliquam odio sit amet risus lobortis 
+                    sollicitudin. Pellentesque tristique, ex id accumsan bibendum, nibh lacus dapibus 
+                    arcu, id suscipit sem lorem sed odio. Etiam at nisl velit. Sed sagittis sollicitudin 
+                    lectus, ac volutpat sem consectetur id. Nullam feugiat tortor quis nibh bibendum
+                     cursus. Etiam maximus eros nec mi rhoncus, non fringilla libero faucibus. Nunc 
+                    aviverra ultricies malesuada. Ut sit amet ante sagittis, posuere arcu ac, hendrerit erat.
+                </p>
+            </div>
 
             <h2>@ViewBag.Title.</h2>
             <h3>@ViewBag.Message</h3>
@@ -69,12 +121,6 @@
                 <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
             </footer>
         </div>
-
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-    </div>
 </body>
-
-
 </html>
 
