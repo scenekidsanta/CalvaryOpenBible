@@ -19,6 +19,24 @@ namespace CalvaryOpebBibleWebsite.Controllers
 
             return View();
         }
+        public ActionResult Ministries()
+        {
+            ViewBag.Message = "Your ministries description page.";
+
+            return View();
+        }
+        public ActionResult Media()
+        {
+            ViewBag.Message = "Your media description page.";
+
+            return View();
+        }
+        public ActionResult Calendar()
+        {
+            ViewBag.Message = "Your calendar description page.";
+
+            return View();
+        }
 
         public ActionResult Contact()
         {
