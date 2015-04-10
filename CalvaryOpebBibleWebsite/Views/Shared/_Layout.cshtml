@@ -6,8 +6,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/Navbar.js" type="text/javascript"></script>
+    <link href="~/Content/CustomCSS/Navbar.css" rel="stylesheet" type="text/css" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <!--
+        Tutorial used:
+        http://codepen.io/Guilh/pen/JLKbn
+
+
+        further navbar styles:
+        http://code.tutsplus.com/tutorials/a-different-top-navigation--net-5891
+    -->
+
     
 
     <script type="text/javascript">
@@ -23,8 +36,13 @@
 </head>
 
     <body>
+        <div class="jumbotron header">
+            <h1>TestJumbotron</h1>
+            <p class="lead">Filler Filler Filler Filler Filler Filler Filler Filler Filler Filler Filler</p>
+            <p><a href="" class="btn btn-primary btn-lg"> Filler Filler Filler Filler</a></p>
+        </div>
         <div style="background-image =""">
-            <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar navbar-inverse main-nav">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -44,7 +62,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container body-content">
+            <div class="container body-content main">
                 @RenderBody()
                 <hr />
                 <footer>
