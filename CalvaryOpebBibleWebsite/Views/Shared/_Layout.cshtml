@@ -35,8 +35,8 @@
     </script>
 </head>
 
-    <body>
-        <div class="jumbotron header">
+    <body style="padding-top: 390px;">
+        <div class="jumbotron" style="position: fixed; width: 100%; top: 0; height: 250px;">
             <h1>TestJumbotron</h1>
             <p class="lead">Filler Filler Filler Filler Filler Filler Filler Filler Filler Filler Filler</p>
             <p><a href="" class="btn btn-primary btn-lg"> Filler Filler Filler Filler</a></p>
@@ -52,15 +52,43 @@
                         </button>
                         @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                     </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <div id="menu" class="navbar-collapse collapse">
+                        <ul id="nav" class="nav navbar-nav">
+                            <li>@Html.ActionLink("Home", "Index", "Home")
+                                <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px;">
+                                    <li><a href="#">Misc 1.1</a></li>
+                                    <li><a href="#">Misc 1.2</a></li>
+                                    <li><a href="#">Misc 1.3</a></li>
+                                </ul>
+                            </li>
+                            <li>@Html.ActionLink("About", "About", "Home")
+                                <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px;">
+                                    <li><a href="#">Misc 2.1</a></li>
+                                    <li><a href="#">Misc 2.2</a></li>
+                                    <li><a href="#">Misc 2.3</a></li>
+                                </ul>
+                            </li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")
+                                <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px;">
+                                    <li><a href="#">Misc 3.1</a></li>
+                                    <li><a href="#">Misc 3.2</a></li>
+                                    <li><a href="#">Misc 3.3</a></li>
+                                </ul>
+                            </li>
                         </ul>
                         @Html.Partial("_LoginPartial")
                     </div>
                 </div>
+            </div>
+            <div style="position:absolute; padding-top: 390px; width: 25%; background-color: #FFFFFF; float: left;">
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            </div>
+            <div style="position:absolute; padding-top: 390px; width: 25%; background-color: #FFFFFF; float: left; padding-left: 75%;">
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
             </div>
             <div class="container body-content main">
                 @RenderBody()
