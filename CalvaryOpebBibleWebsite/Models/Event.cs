@@ -28,6 +28,11 @@ namespace CalvaryOpebBibleWebsite.Models
         public string EventName { get; set; }
 
         [Required]
+        public DateTime StartDate { get; set; }
+
+        public DateTime EndDate { get; set; }
+
+        [Required]
         public string EventLocation { get; set; }
 
         // Thought this might be good to have, but could definitely get rid of

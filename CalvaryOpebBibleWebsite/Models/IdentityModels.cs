@@ -29,5 +29,7 @@ namespace CalvaryOpebBibleWebsite.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<CalvaryOpebBibleWebsite.Models.Event> Events { get; set; }
     }
 }
